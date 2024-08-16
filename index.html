@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himani Sharma - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #13294b;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #13294b;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            margin-bottom: 40px;
+        }
+
+        .content h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            line-height: 1.6;
+        }
+
+        .profile-pic {
+            float: right;
+            margin-left: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        .contact-info {
+            margin: 10px 0;
+        }
+
+        .expandable {
+            display: none;
+            margin-top: 10px;
+            border: 2px solid #333;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .image-container img {
+            width: 32%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+            /* Ensure the image covers the area without squishing */
+        }
+
+        .image-container img.expanded {
+            transform: scale(2);
+            /* Double the size on click */
+            z-index: 1000;
+            /* Bring the expanded image to the front */
+            position: relative;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="schoolLogo.png" alt="School Logo" class="logo">
+        <h1>Himani Sharma</h1>
+        <p>Electrical Engineering Student | Embedded Systems Enthusiast</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="content">
+            <h2 class="section-title">About Me</h2>
+            <img src="profile.jpeg" alt="Profile Picture" class="profile-pic">
+            <p>Hi! I'm Himani, a passionate Electrical Engineering student at the University of Illinois
+                Urbana-Champaign. I have a strong interest in embedded systems, AI inferencing, and circuit design. I
+                love to innovate and create solutions that push the boundaries of technology.</p><br>
+        </section>
+
+        <section id="projects" class="content">
+            <h2 class="section-title">Projects</h2>
+
+            <div>
+                <p><strong>Graymatics, Inc.:</strong> Designed an optimized LLM stack for custom data training on a
+                    local GPU cluster targeting enterprise customers.</p>
+                <button onclick="toggleVisibility('graymatics', this)">Show More</button>
+                <div id="graymatics" class="expandable">
+                    <p>At Graymatics, I focused on optimizing an LLM stack for custom data training on a local GPU
+                        cluster. This involved setting up the environment on Ubuntu, using Nvidia CUDA on a GeForce GTX
+                        1660, and implementing frameworks like PyTorch, Hugging Face, and Ollama.</p>
+                    <div class="image-container">
+                        <img src="image1.jpg" alt="Project Image 1" onclick="expandImage(this)">
+                        <img src="image2.jpg" alt="Project Image 2" onclick="expandImage(this)">
+                        <img src="image3.jpg" alt="Project Image 3" onclick="expandImage(this)">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p><strong>Applause Meter:</strong> Engineered and synthesized intricate circuit schematics for
+                    implementation on breadboard prototypes, leading to a 20% reduction in component usage and a 15%
+                    increase in overall circuit efficiency.</p>
+                <button onclick="toggleVisibility('applause', this)">Show More</button>
+                <div id="applause" class="expandable">
+                    <p>The Applause Meter project involved creating an acoustic-responsive circuit mechanism that
+                        differentiated sound intensity to trigger reactions, particularly calibrated for hand clapping.
+                        The project was a great success, improving circuit efficiency by 15% and component usage by 20%.
+                    </p>
+                    <div class="image-container">
+                        <img src="image4.jpg" alt="Project Image 4" onclick="expandImage(this)">
+                        <img src="image5.jpg" alt="Project Image 5" onclick="expandImage(this)">
+                        <img src="image6.jpg" alt="Project Image 6" onclick="expandImage(this)">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p><strong>AI Inferencing Engine Research:</strong> Led a pioneering research initiative to transition
+                    AI inferencing to edge computing, enhancing accessibility and reducing dependency on cloud
+                    infrastructure. <a
+                        href="https://medium.com/@himani005/ai-inferencing-on-multiple-types-of-edge-compute-platforms-5522d75f48c0">Read
+                        My Blog!</a>
+                </p>
+                <button onclick="toggleVisibility('ai', this)">Show More</button>
+                <div id="ai" class="expandable">
+                    <p>My research on AI inferencing focused on transitioning to edge computing, using platforms like
+                        Intel CPU, Nvidia GPU, and Kinara ARM. The goal was to optimize latency for computer vision
+                        tasks, demonstrating superior performance on the Kinara ARM platform.</p>
+                    <div class="image-container">
+                        <img src="image7.jpg" alt="Project Image 7" onclick="expandImage(this)">
+                        <img src="image8.jpg" alt="Project Image 8" onclick="expandImage(this)">
+                        <img src="image9.jpg" alt="Project Image 9" onclick="expandImage(this)">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="contact" class="content">
+            <h2 class="section-title">Contact</h2>
+            <p>I'd love to hear from you! Feel free to reach out via the following methods:</p>
+            <p class="contact-info">
+                Email: <a href="mailto:himanis2@illinois.edu">himanis2@illinois.edu</a><br>
+                LinkedIn: <a
+                    href="https://www.linkedin.com/in/himani-sharma-35b592278/">https://www.linkedin.com/in/himani-sharma-35b592278/</a>
+            </p>
+        </section>
+    </div>
+
+    <script>
+        function toggleVisibility(id, button) {
+            var element = document.getElementById(id);
+            if (element.style.display === "block") {
+                element.style.display = "none";
+                button.textContent = "Show More";
+            } else {
+                element.style.display = "block";
+                button.textContent = "Show Less";
+            }
+        }
+
+        function expandImage(img) {
+            if (img.classList.contains('expanded')) {
+                img.classList.remove('expanded');
+            } else {
+                // Reset all other images
+                var images = document.querySelectorAll('.image-container img');
+                images.forEach(function (otherImg) {
+                    otherImg.classList.remove('expanded');
+                });
+                img.classList.add('expanded');
+            }
+        }
+    </script>
+
+</body>
+</html>
